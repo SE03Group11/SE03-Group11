@@ -6,8 +6,10 @@
 - Nâng cao khả năng làm việc nhóm
 - Tập làm quen với Git và GitHub
 ###### 1.2 Kết quả đạt được
-- 
+- Web bán hàng
 ## 2. Công nghệ và công cụ
 ###### 2.1 Công nghệ
+- Project sử dụng công nghệ web php, cụ thể là sử dụng framework Laravel
 ###### 2.2 Công cụ
+- Sử dụng công cụ PHPStorm để hoàn thành project
 ## 3. Hướng dẫn sử dụng và cài đặt
