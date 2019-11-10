@@ -1,22 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9186d616-7088-446f-9555-83f71abbea67" name="Default Changelist" comment="" />
+    <list default="true" id="9186d616-7088-446f-9555-83f71abbea67" name="Default Changelist" comment="fashion shop">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Console/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Exceptions/Handler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Controllers/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Kernel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Middleware/Authenticate.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Middleware/CheckForMaintenanceMode.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Middleware/EncryptCookies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Middleware/TrimStrings.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Middleware/TrustProxies.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Providers/AppServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Providers/AuthServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Providers/BroadcastServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Providers/EventServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/Providers/RouteServiceProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/app/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/artisan" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/bootstrap/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/bootstrap/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/composer.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/broadcasting.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/filesystems.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/hashing.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/logging.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/mail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/queue.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/services.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/session.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/config/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/database/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/database/factories/UserFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/database/seeds/DatabaseSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/public/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/public/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/public/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/public/svg/403.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/public/svg/404.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/public/svg/500.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/public/svg/503.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/public/web.config" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/resources/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/resources/js/components/ExampleComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/resources/lang/en/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/resources/lang/en/pagination.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/resources/lang/en/passwords.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/resources/lang/en/validation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/resources/sass/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/resources/sass/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/routes/api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/routes/channels.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/routes/console.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/routes/web.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/server.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/storage/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/storage/app/public/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/storage/framework/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/storage/framework/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/storage/framework/sessions/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/storage/framework/testing/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/storage/framework/views/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/storage/logs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/tests/CreatesApplication.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/tests/Feature/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/tests/TestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/tests/Unit/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fashionshop/webpack.mix.js" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/fashionshop/composer.json</pharConfigPath>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1546888800">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fashionshop/.env">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop_online/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-            </state>
+            <state relative-caret-position="-51" />
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shop_online/.editorconfig">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/shop_online/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -31,7 +151,21 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/shop_online/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-16" />
     <option name="width" value="728" />
     <option name="height" value="779" />
@@ -41,7 +175,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -52,16 +185,30 @@
             <path>
               <item name="SE03-Group11" type="b2602c69:ProjectViewProjectNode" />
               <item name="SE03-Group11" type="462c0819:PsiDirectoryNode" />
-              <item name="fashionshop" type="462c0819:PsiDirectoryNode" />
+              <item name="shop_online" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SE03-Group11" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SE03-Group11" type="462c0819:PsiDirectoryNode" />
+              <item name="shop_online" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SE03-Group11" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SE03-Group11" type="462c0819:PsiDirectoryNode" />
+              <item name="shop_online" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -88,6 +235,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572881541776</updated>
       <workItem from="1572881543650" duration="2612000" />
+      <workItem from="1573375240403" duration="1948000" />
     </task>
     <task id="LOCAL-00001" summary="fashion shop">
       <created>1572883239089</created>
@@ -100,19 +248,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2612000" />
+    <option name="totallyTimeSpent" value="4560000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12632374" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12556732" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -120,26 +263,39 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" visible="true" weight="0.34697217" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.34697217" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fashion shop" />
     <option name="LAST_COMMIT_MESSAGE" value="fashion shop" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fashionshop/.env">
+    <entry file="file://$PROJECT_DIR$/fashionshop/.env" />
+    <entry file="file://$PROJECT_DIR$/shop_online/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-        </state>
+        <state relative-caret-position="-51" />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop_online/.editorconfig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop_online/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
