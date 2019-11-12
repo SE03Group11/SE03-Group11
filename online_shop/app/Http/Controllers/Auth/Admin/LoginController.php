@@ -53,7 +53,6 @@ class LoginController extends Controller
     /**
      * Phương thức này dùng để đăng xuất
      */
-
     public function logout() {
         Auth::guard('admin')->logout();
 

@@ -21,7 +21,6 @@ class CreateAdmins extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-
         });
     }
 

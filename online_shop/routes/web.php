@@ -71,7 +71,6 @@ Route::prefix('admin')->group(function (){
      * Route dùng để đăng xuất
      */
 
-
     Route::post('logout','Auth\Admin\LoginController@logout')->name('admin.auth.logout');
 
     /**
