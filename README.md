@@ -3,13 +3,16 @@
 ## 1. Mục tiêu và kết quả đạt được
 ###### 1.1 Mục tiêu
 - Project nhằm phục vụ việc học tập và là kết quả cuối kì của môn Công nghệ phần mềm.
-- Nâng cao khả năng làm việc nhóm
-- Tập làm quen với Git và GitHub
+- Nâng cao khả năng làm việc nhóm.
+- Tập làm quen với Git và GitHub.
 ###### 1.2 Kết quả đạt được
-- Web bán hàng
+- Hoàn thành và chạy thử các tính năng của hệ thống trong 90 ngày.
+- Phần mềm giúp người dùng biết rõ hơn về sản phẩm trong cửa hàng giúp người mua thuận tiện hơn trong việc mua sắm.
 ## 2. Công nghệ và công cụ
 ###### 2.1 Công nghệ
-- Project sử dụng công nghệ web php, cụ thể là sử dụng framework Laravel
+- Laravel php
+- HTML, CSS, JavaScript, bootstrap, JQuery
 ###### 2.2 Công cụ
-- Sử dụng công cụ PHPStorm để hoàn thành project
+- PHPStorm
+- Navicat
 ## 3. Hướng dẫn sử dụng và cài đặt
