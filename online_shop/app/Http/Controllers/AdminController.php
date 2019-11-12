@@ -43,6 +43,7 @@ class AdminController extends Controller
             'password' => 'required'
         ));
 
+
         // Khởi tạo model để lưu admin mới
         $adminModel = new AdminModel();
         $adminModel->name = $request->name;

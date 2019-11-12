@@ -70,6 +70,8 @@ Route::prefix('admin')->group(function (){
      * URL online_shop/admin/logout
      * Route dùng để đăng xuất
      */
+
+
     Route::post('logout','Auth\Admin\LoginController@logout')->name('admin.auth.logout');
 
     /**
