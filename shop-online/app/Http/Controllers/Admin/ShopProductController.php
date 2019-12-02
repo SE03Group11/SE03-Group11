@@ -2,25 +2,25 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Admin\ShopProductModel;
+use App\Model\Admin\ShopCategoryModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Admin\ShopCategoryModel;
 use Illuminate\Support\Facades\DB;
 
-class ShopCategoryController extends Controller
+class ShopProductController extends Controller
 {
     //
     public function index() {
-
-        $items = DB::table('shop_category')->paginate(10);
+        $items = DB::table('shop_products')->paginate(10);
 
         /**
          * Đây là biến truyền từ controller xuống view
          */
         $data = array();
-        $data['cats'] = $items;
+        $data['products'] = $items;
 
-        return view('admin.content.shop.category.index', $data);
+        return view('admin.content.shop.product.index', $data);
     }
 
     public function create() {
@@ -29,7 +29,10 @@ class ShopCategoryController extends Controller
          */
         $data = array();
 
-        return view('admin.content.shop.category.submit', $data);
+        $cats = ShopCategoryModel::all();
+        $data['cats'] = $cats;
+
+        return view('admin.content.shop.product.submit', $data);
     }
 
     public function edit($id) {
@@ -38,10 +41,13 @@ class ShopCategoryController extends Controller
          */
         $data = array();
 
-        $item = ShopCategoryModel::find($id);
-        $data['cat'] = $item;
+        $item = ShopProductModel::find($id);
+        $data['product'] = $item;
 
-        return view('admin.content.shop.category.edit', $data);
+        $cats = ShopCategoryModel::all();
+        $data['cats'] = $cats;
+
+        return view('admin.content.shop.product.edit', $data);
     }
 
     public function delete($id) {
@@ -50,10 +56,10 @@ class ShopCategoryController extends Controller
          */
         $data = array();
 
-        $item = ShopCategoryModel::find($id);
-        $data['cat'] = $item;
+        $item = ShopProductModel::find($id);
+        $data['product'] = $item;
 
-        return view('admin.content.shop.category.delete', $data);
+        return view('admin.content.shop.product.delete', $data);
     }
 
     public function store(Request $request) {
@@ -62,54 +68,68 @@ class ShopCategoryController extends Controller
             'name' => 'required|max:255',
             'slug' => 'required',
             'images' => 'required',
+            'priceCore' => 'required|numeric',
+            'priceSale' => 'required|numeric',
+            'stock' => 'required',
             'intro' => 'required',
             'desc' => 'required',
         ]);
         $input = $request->all();
 
-
-        $item = new ShopCategoryModel();
+        $item = new ShopProductModel();
 
         $item->name = $input['name'];
         $item->slug = $input['slug'];
         $item->images = $input['images'];
         $item->intro = $input['intro'];
         $item->desc = $input['desc'];
+        $item->priceCore = $input['priceCore'];
+        $item->priceSale = $input['priceSale'];
+        $item->stock = $input['stock'];
+        $item->cat_id = $input['cat_id'];
 
         $item->save();
 
-        return redirect('/admin/shop/category');
+        return redirect('/admin/shop/product');
     }
 
     public function update(Request $request, $id) {
-
         $validatedData = $request->validate([
             'name' => 'required|max:255',
             'slug' => 'required',
             'images' => 'required',
+            'priceCore' => 'required|numeric',
+            'priceSale' => 'required|numeric',
+            'stock' => 'required',
             'intro' => 'required',
             'desc' => 'required',
         ]);
         $input = $request->all();
 
-        $item = ShopCategoryModel::find($id);
+        $item = ShopProductModel::find($id);
 
         $item->name = $input['name'];
         $item->slug = $input['slug'];
         $item->images = $input['images'];
         $item->intro = $input['intro'];
         $item->desc = $input['desc'];
+        $item->priceCore = $input['priceCore'];
+        $item->priceSale = $input['priceSale'];
+        $item->stock = $input['stock'];
+        $item->cat_id = $input['cat_id'];
 
         $item->save();
 
-        return redirect('/admin/shop/category');
+        return redirect('/admin/shop/product');
     }
 
     public function destroy($id) {
-        $item = ShopCategoryModel::find($id);
+        $item = ShopProductModel::find($id);
 
         $item->delete();
 
-        return redirect('/admin/shop/category');
+        return redirect('/admin/shop/product');
     }
+
+
 }

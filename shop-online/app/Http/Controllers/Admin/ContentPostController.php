@@ -2,25 +2,26 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Admin\ContentCategoryModel;
+use App\Model\Admin\ContentPostModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Admin\ShopCategoryModel;
 use Illuminate\Support\Facades\DB;
 
-class ShopCategoryController extends Controller
+class ContentPostController extends Controller
 {
     //
-    public function index() {
 
-        $items = DB::table('shop_category')->paginate(10);
+    public function index() {
+        $items = DB::table('content_posts')->paginate(10);
 
         /**
          * Đây là biến truyền từ controller xuống view
          */
         $data = array();
-        $data['cats'] = $items;
+        $data['posts'] = $items;
 
-        return view('admin.content.shop.category.index', $data);
+        return view('admin.content.content.post.index', $data);
     }
 
     public function create() {
@@ -29,7 +30,10 @@ class ShopCategoryController extends Controller
          */
         $data = array();
 
-        return view('admin.content.shop.category.submit', $data);
+        $cats = ContentCategoryModel::all();
+        $data['cats'] = $cats;
+
+        return view('admin.content.content.post.submit', $data);
     }
 
     public function edit($id) {
@@ -38,10 +42,13 @@ class ShopCategoryController extends Controller
          */
         $data = array();
 
-        $item = ShopCategoryModel::find($id);
-        $data['cat'] = $item;
+        $item = ContentPostModel::find($id);
+        $data['post'] = $item;
 
-        return view('admin.content.shop.category.edit', $data);
+        $cats = ContentCategoryModel::all();
+        $data['cats'] = $cats;
+
+        return view('admin.content.content.post.edit', $data);
     }
 
     public function delete($id) {
@@ -50,10 +57,10 @@ class ShopCategoryController extends Controller
          */
         $data = array();
 
-        $item = ShopCategoryModel::find($id);
-        $data['cat'] = $item;
+        $item = ContentPostModel::find($id);
+        $data['post'] = $item;
 
-        return view('admin.content.shop.category.delete', $data);
+        return view('admin.content.content.post.delete', $data);
     }
 
     public function store(Request $request) {
@@ -65,20 +72,23 @@ class ShopCategoryController extends Controller
             'intro' => 'required',
             'desc' => 'required',
         ]);
+
         $input = $request->all();
 
-
-        $item = new ShopCategoryModel();
+        $item = new ContentPostModel();
 
         $item->name = $input['name'];
         $item->slug = $input['slug'];
         $item->images = $input['images'];
+        $item->author_id = isset($input['author_id']) ? $input['author_id'] : 0;
+        $item->view = isset($input['view']) ? $input['view'] : 0;
         $item->intro = $input['intro'];
         $item->desc = $input['desc'];
+        $item->cat_id = $input['cat_id'];
 
         $item->save();
 
-        return redirect('/admin/shop/category');
+        return redirect('/admin/content/post');
     }
 
     public function update(Request $request, $id) {
@@ -90,26 +100,30 @@ class ShopCategoryController extends Controller
             'intro' => 'required',
             'desc' => 'required',
         ]);
+
         $input = $request->all();
 
-        $item = ShopCategoryModel::find($id);
+        $item = ContentPostModel::find($id);
 
         $item->name = $input['name'];
         $item->slug = $input['slug'];
         $item->images = $input['images'];
         $item->intro = $input['intro'];
+        $item->author_id = isset($input['author_id']) ? $input['author_id'] : 0;
+        $item->view = isset($input['view']) ? $input['view'] : 0;
         $item->desc = $input['desc'];
+        $item->cat_id = $input['cat_id'];
 
         $item->save();
 
-        return redirect('/admin/shop/category');
+        return redirect('/admin/content/post');
     }
 
     public function destroy($id) {
-        $item = ShopCategoryModel::find($id);
+        $item = ContentPostModel::find($id);
 
         $item->delete();
 
-        return redirect('/admin/shop/category');
+        return redirect('/admin/content/post');
     }
 }
