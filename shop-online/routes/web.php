@@ -169,9 +169,6 @@ Route::prefix('admin')->group(function() {
     Route::post('content/page/{id}/delete', 'Admin\ContentPageController@destroy');
 
     //Content tag
-    Route::get('content/tag', function () {
-        return view('admin.content.content.tag.index');
-    });
 
     Route::get('content/tag', 'Admin\ContentTagController@index');
     Route::get('content/tag/create', 'Admin\ContentTagController@create');

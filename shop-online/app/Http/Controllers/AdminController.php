@@ -12,6 +12,7 @@ class AdminController extends Controller
      * Hàm này nó luôn được chạy trước các hàm khác trong class
      * AdminController constructor.
      */
+
     public function __construct()
     {
         $this->middleware('auth:admin')->only('index');
