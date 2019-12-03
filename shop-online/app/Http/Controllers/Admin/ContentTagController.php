@@ -82,6 +82,7 @@ class ContentTagController extends Controller
         return redirect('/admin/content/tag');
     }
 
+
     public function update(Request $request, $id) {
 
         $validatedData = $request->validate([
