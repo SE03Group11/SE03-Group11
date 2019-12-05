@@ -35,7 +35,7 @@
                 </div>
                 <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Mô tả</label>
-                    <div class="col-sm-8"><textarea name="desc" id="txtarea1" cols="50" rows="4" class="form-control1">{{ $menu->desc }}</textarea></div>
+                    <div class="col-sm-8"><textarea name="desc" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ $menu->desc }}</textarea></div>
                 </div>
 
 

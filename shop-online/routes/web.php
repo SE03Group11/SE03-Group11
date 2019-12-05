@@ -229,9 +229,10 @@ Route::prefix('admin')->group(function() {
      * ---------------------------------------------------------
      * ---------------------------------------------------------
      */
-    Route::get('config', function () {
-        return view('admin.content.config.index');
-    });
+    //Global settings
+    Route::get('config', 'Admin\ConfigController@index');
+
+    Route::post('config', 'Admin\ConfigController@store');
 
     /**
      * ----------------- Route admin newletters --------------------

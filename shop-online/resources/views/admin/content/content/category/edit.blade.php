@@ -41,12 +41,14 @@
 
                 <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Mô tả ngắn</label>
-                    <div class="col-sm-8"><textarea name="intro" id="txtarea1" cols="50" rows="4" class="form-control1">{{ $cat->intro }}</textarea></div>
+                    <div class="col-sm-8">
+                        <textarea name="intro" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ $cat->intro }}</textarea></div>
                 </div>
 
                 <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Mô tả</label>
-                    <div class="col-sm-8"><textarea name="desc" id="txtarea1" cols="50" rows="4" class="form-control1">{{ $cat->desc }}</textarea></div>
+                    <div class="col-sm-8">
+                        <textarea name="desc" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ $cat->desc }}</textarea></div>
                 </div>
 
                 <div class="col-sm-offset-2">

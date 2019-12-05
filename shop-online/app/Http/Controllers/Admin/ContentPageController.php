@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Admin\ConfigModel;
 use App\Model\Admin\ContentPageModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,15 +14,15 @@ class ContentPageController extends Controller
 
 
     public function index() {
-        $items = DB::table('content_pages')->paginate(10);
+        $items = ConfigModel::all();
 
         /**
          * Đây là biến truyền từ controller xuống view
          */
         $data = array();
-        $data['pages'] = $items;
+        $data['configs'] = $items;
 
-        return view('admin.content.content.page.index', $data);
+        return view('admin.content.config.index', $data);
     }
 
     public function create() {
