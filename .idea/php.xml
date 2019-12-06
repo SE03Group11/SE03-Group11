@@ -83,6 +83,25 @@
       <path value="$PROJECT_DIR$/shop-online/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/shop-online/vendor/fideloper/proxy" />
       <path value="$PROJECT_DIR$/shop-online/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/laravel/slack-notification-channel" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/darryldecode/cart" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/php-http/guzzle6-adapter" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/nexmo/client-core" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/nexmo/client" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/laravel/nexmo-notification-channel" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/intervention/image" />
+      <path value="$PROJECT_DIR$/shop-online/vendor/unisharp/laravel-filemanager" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
