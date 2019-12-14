@@ -27,6 +27,6 @@ class CustomerManagerController extends Controller
         $data = array();
 
 
-        return view('admin.content..shop.customer.submit', $data);
+        return view('admin.content.shop.customer.submit', $data);
     }
 }
