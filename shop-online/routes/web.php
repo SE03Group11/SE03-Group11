@@ -118,56 +118,11 @@ Route::prefix('admin')->group(function() {
     Route::get('shop/customer', function () {
         return view('admin.content.shop.customer.index');
     });
-    Route::get('shop/customer', 'Admin\CustomerManagerController@index');
-    Route::get('shop/customer/create', 'Admin\CustomerManagerController@create');
-    Route::get('shop/customer/{id}/edit', 'Admin\CustomerManagerController@edit');
-    Route::get('shop/customer/{id}/delete', 'Admin\CustomerManagerController@delete');
-
-    Route::post('shop/customer', 'Admin\CustomerManagerController@store');
-    Route::post('shop/customer/{id}', 'Admin\CustomerManagerController@update');
-    Route::post('shop/customer/{id}/delete', 'Admin\CustomerManagerController@destroy');
-
-    Route::get('shop/shipper', function () {
-        return view('admin.content.shop.shipper.index');
-    });
-    Route::get('shop/shipper', 'Admin\ShipperManagerController@index');
-    Route::get('shop/shipper/create', 'Admin\ShipperManagerController@create');
-    Route::get('shop/shipper/{id}/edit', 'Admin\ShipperManagerController@edit');
-    Route::get('shop/shipper/{id}/delete', 'Admin\ShipperManagerController@delete');
-
-    Route::post('shop/shipper', 'Admin\ShipperManagerController@store');
-    Route::post('shop/shipper/{id}', 'Admin\ShipperManagerController@update');
-    Route::post('shop/shipper/{id}/delete', 'Admin\ShipperManagerController@destroy');
-
-    Route::get('shop/seller', function () {
-        return view('admin.content.shop.seller.index');
-    });
-    Route::get('shop/seller', 'Admin\SellerManagerController@index');
-    Route::get('shop/seller/create', 'Admin\SellerManagerController@create');
-    Route::get('shop/seller/{id}/edit', 'Admin\SellerManagerController@edit');
-    Route::get('shop/seller/{id}/delete', 'Admin\SellerManagerController@delete');
-
-    Route::post('shop/seller', 'Admin\SellerManagerController@store');
-    Route::post('shop/seller/{id}', 'Admin\SellerManagerController@update');
-    Route::post('shop/seller/{id}/delete', 'Admin\SellerManagerController@destroy');
-
-    //Nhãn hiệu
-
 
     Route::get('shop/brand', function () {
         return view('admin.content.shop.brand.index');
     });
 
-    Route::get('shop/brand', 'Admin\ShopBrandController@index');
-    Route::get('shop/brand/create', 'Admin\ShopBrandController@create');
-    Route::get('shop/brand/{id}/edit', 'Admin\ShopBrandController@edit');
-    Route::get('shop/brand/{id}/delete', 'Admin\ShopBrandController@delete');
-
-    Route::post('shop/brand', 'Admin\ShopBrandController@store');
-    Route::post('shop/brand/{id}', 'Admin\ShopBrandController@update');
-    Route::post('shop/brand/{id}/delete', 'Admin\ShopBrandController@destroy');
-
-    //Thống kê
     Route::get('shop/statistic', function () {
         return view('admin.content.shop.statistic.index');
     });
@@ -214,6 +169,7 @@ Route::prefix('admin')->group(function() {
     Route::post('content/page/{id}/delete', 'Admin\ContentPageController@destroy');
 
     //Content tag
+
     Route::get('content/tag', 'Admin\ContentTagController@index');
     Route::get('content/tag/create', 'Admin\ContentTagController@create');
     Route::get('content/tag/{id}/edit', 'Admin\ContentTagController@edit');
@@ -222,7 +178,6 @@ Route::prefix('admin')->group(function() {
     Route::post('content/tag', 'Admin\ContentTagController@store');
     Route::post('content/tag/{id}', 'Admin\ContentTagController@update');
     Route::post('content/tag/{id}/delete', 'Admin\ContentTagController@destroy');
-
     /**
      * ----------------- Route admin menu --------------------
      * ---------------------------------------------------------
@@ -259,14 +214,6 @@ Route::prefix('admin')->group(function() {
         return view('admin.content.users.index');
     });
 
-    Route::get('users', 'Admin\AdminManagerController@index');
-    Route::get('users/create', 'Admin\AdminManagerController@create');
-    Route::get('users/{id}/edit', 'Admin\AdminManagerController@edit');
-    Route::get('users/{id}/delete', 'Admin\AdminManagerController@delete');
-
-    Route::post('users/tag', 'Admin\AdminManagerController@store');
-    Route::post('users/tag/{id}', 'Admin\AdminManagerController@update');
-    Route::post('users/tag/{id}/delete', 'Admin\AdminManagerController@destroy');
     /**
      * ----------------- Route admin users --------------------
      * ---------------------------------------------------------
