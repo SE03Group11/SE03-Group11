@@ -178,6 +178,9 @@ Route::prefix('admin')->group(function() {
     Route::post('content/tag', 'Admin\ContentTagController@store');
     Route::post('content/tag/{id}', 'Admin\ContentTagController@update');
     Route::post('content/tag/{id}/delete', 'Admin\ContentTagController@destroy');
+
+
+
     /**
      * ----------------- Route admin menu --------------------
      * ---------------------------------------------------------
@@ -213,6 +216,14 @@ Route::prefix('admin')->group(function() {
     Route::get('users', function () {
         return view('admin.content.users.index');
     });
+    Route::get('users', 'Admin\AdminManagerController@index');
+    Route::get('users/create', 'Admin\AdminManagerController@create');
+    Route::get('users/{id}/edit', 'Admin\AdminManagerController@edit');
+    Route::get('users/{id}/delete', 'Admin\AdminManagerController@delete');
+
+    Route::post('users', 'Admin\AdminManagerController@store');
+    Route::post('users/{id}', 'Admin\AdminManagerController@update');
+    Route::post('users/{id}/delete', 'Admin\AdminManagerController@destroy');
 
     /**
      * ----------------- Route admin users --------------------
