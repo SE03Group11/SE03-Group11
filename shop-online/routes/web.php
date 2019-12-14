@@ -115,9 +115,37 @@ Route::prefix('admin')->group(function() {
         return view('admin.content.shop.review.index');
     });
 
-    Route::get('shop/customer', function () {
-        return view('admin.content.shop.customer.index');
-    });
+
+    //customer
+    Route::get('shop/customer', 'Admin\CustomerManagerController@index');
+    Route::get('shop/customer/create', 'Admin\CustomerManagerController@create');
+    Route::get('shop/customer/{id}/edit', 'Admin\CustomerManagerController@edit');
+    Route::get('shop/customer/{id}/delete', 'Admin\CustomerManagerController@delete');
+
+    Route::post('shop/customer', 'Admin\CustomerManagerController@store');
+    Route::post('shop/customer/{id}', 'Admin\CustomerManagerController@update');
+    Route::post('shop/customer/{id}/delete', 'Admin\CustomerManagerController@destroy');
+
+    //shipper
+    Route::get('shop/shipper', 'Admin\ShipperManagerController@index');
+    Route::get('shop/shipper/create', 'Admin\ShipperManagerController@create');
+    Route::get('shop/shipper/{id}/edit', 'Admin\ShipperManagerController@edit');
+    Route::get('shop/shipper/{id}/delete', 'Admin\ShipperManagerController@delete');
+
+    Route::post('shop/shipper', 'Admin\ShipperManagerController@store');
+    Route::post('shop/shipper/{id}', 'Admin\ShipperManagerController@update');
+    Route::post('shop/shipper/{id}/delete', 'Admin\ShipperManagerController@destroy');
+
+    //seller
+    Route::get('shop/seller', 'Admin\SellerManagerController@index');
+    Route::get('shop/seller/create', 'Admin\SellerManagerController@create');
+    Route::get('shop/seller/{id}/edit', 'Admin\SellerManagerController@edit');
+    Route::get('shop/seller/{id}/delete', 'Admin\SellerManagerController@delete');
+
+    Route::post('shop/seller', 'Admin\SellerManagerController@store');
+    Route::post('shop/seller/{id}', 'Admin\SellerManagerController@update');
+    Route::post('shop/seller/{id}/delete', 'Admin\SellerManagerController@destroy');
+
 
     Route::get('shop/brand', function () {
         return view('admin.content.shop.brand.index');
