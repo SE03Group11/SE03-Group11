@@ -90,7 +90,7 @@ class ShopProductController extends Controller
 
         $item->name = $input['name'];
         $item->slug = $input['slug'];
-        $item->images = $input['images'];
+        $item->images = isset($input['images']) ? json_encode($input['images']) : '';
         $item->intro = $input['intro'];
         $item->desc = $input['desc'];
         $item->priceCore = $input['priceCore'];
@@ -118,9 +118,11 @@ class ShopProductController extends Controller
 
         $item = ShopProductModel::find($id);
 
+
+
         $item->name = $input['name'];
         $item->slug = $input['slug'];
-        $item->images = $input['images'];
+        $item->images = isset($input['images']) ? json_encode($input['images']) : '';
         $item->intro = $input['intro'];
         $item->desc = $input['desc'];
         $item->priceCore = $input['priceCore'];
