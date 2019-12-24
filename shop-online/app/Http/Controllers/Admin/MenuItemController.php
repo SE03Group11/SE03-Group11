@@ -2,12 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Model\Admin\ContentCategoryModel;
+use App\Model\Admin\ContentPageModel;
+use App\Model\Admin\ContentPostModel;
+use App\Model\Admin\ContentTagModel;
 use App\Model\Admin\MenuItemModel;
 use App\Model\Admin\MenuModel;
+use App\Model\Admin\ShopCategoryModel;
+use App\Model\Admin\ShopProductModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-
 class MenuItemController extends Controller
 {
     //
@@ -16,13 +21,15 @@ class MenuItemController extends Controller
      * Hàm này nó luôn được chạy trước các hàm khác trong class
      * AdminController constructor.
      */
-
     public function __construct()
     {
         $this->middleware('auth:admin');
     }
+
     public function index() {
         $items = DB::table('menu_items')->paginate(10);
+
+        $items = MenuItemModel::getMenuItemRecursive();
 
         /**
          * Đây là biến truyền từ controller xuống view
@@ -40,7 +47,16 @@ class MenuItemController extends Controller
         $data = array();
 
         $data['types'] = MenuItemModel::getTypeOfMenuItem();
+
         $data['menus'] = MenuModel::all();
+        $data['menuitems'] = MenuItemModel::getMenuItemRecursive();
+
+        $data['shop_categories'] = ShopCategoryModel::all();
+        $data['shop_products'] = ShopProductModel::all();
+        $data['content_categories'] = ContentCategoryModel::all();
+        $data['content_tags'] = ContentTagModel::all();
+        $data['content_pages'] = ContentPageModel::all();
+        $data['content_posts'] = ContentPostModel::all();
 
         return view('admin.content.menuitem.submit', $data);
     }
@@ -54,6 +70,17 @@ class MenuItemController extends Controller
         $item = MenuItemModel::find($id);
         $data['menu'] = $item;
 
+        $data['types'] = MenuItemModel::getTypeOfMenuItem();
+
+        $data['menus'] = MenuModel::all();
+        $data['menuitems'] = MenuItemModel::getMenuItemRecursiveExcept($id);
+
+        $data['shop_categories'] = ShopCategoryModel::all();
+        $data['shop_products'] = ShopProductModel::all();
+        $data['content_categories'] = ContentCategoryModel::all();
+        $data['content_tags'] = ContentTagModel::all();
+        $data['content_pages'] = ContentPageModel::all();
+        $data['content_posts'] = ContentPostModel::all();
 
         return view('admin.content.menuitem.edit', $data);
     }
@@ -77,27 +104,35 @@ class MenuItemController extends Controller
             'type' => 'required',
             'desc' => 'required',
             'menu_id' => 'required',
-
-
         ]);
 
         $input = $request->all();
 
         $item = new MenuItemModel();
 
+        $params = array();
+
+        $types = MenuItemModel::getTypeOfMenuItem();
+        foreach ($types as $type_key => $type) {
+            $params['params_'.$type_key] = isset($input['params_'.$type_key]) ? $input['params_'.$type_key] : '';
+        }
+
+        $params_json = json_encode($params);
+
         $item->name = $input['name'];
         $item->type = isset($input['type']) ? $input['type'] : '';
-        $item->params = isset($input['params']) ? $input['params'] : '';
+        $item->params = $params_json;
         $item->link = isset($input['link']) ? $input['link'] : '';
         $item->desc = $input['desc'];
         $item->icon = isset($input['icon']) ? $input['icon'] : '';
-        $item->menu_id = isset($input['menu_id']) ? $input['menu_id'] : '';
-        $item->parent_id = isset($input['parent_id']) ? $input['parent_id'] : '';
+        $item->menu_id = isset($input['menu_id']) ? $input['menu_id'] : 0;
+        $item->parent_id = isset($input['parent_id']) ? $input['parent_id'] : 0;
 
         $item->save();
 
-        return redirect('/admin/menu');
+        return redirect('/admin/menuitems');
     }
+
 
 
     public function update(Request $request, $id) {
@@ -113,19 +148,28 @@ class MenuItemController extends Controller
 
         $item = MenuItemModel::find($id);
 
+        $params = array();
+
+        $types = MenuItemModel::getTypeOfMenuItem();
+        foreach ($types as $type_key => $type) {
+            $params['params_'.$type_key] = isset($input['params_'.$type_key]) ? $input['params_'.$type_key] : '';
+        }
+
+        $params_json = json_encode($params);
+
         $item->name = $input['name'];
+
         $item->type = isset($input['type']) ? $input['type'] : '';
-        $item->params = isset($input['params']) ? $input['params'] : '';
+        $item->params = $params_json;
         $item->link = isset($input['link']) ? $input['link'] : '';
         $item->desc = $input['desc'];
         $item->icon = isset($input['icon']) ? $input['icon'] : '';
-        $item->menu_id = isset($input['menu_id']) ? $input['menu_id'] : '';
-        $item->parent_id = isset($input['parent_id']) ? $input['parent_id'] : '';
-
+        $item->menu_id = isset($input['menu_id']) ? $input['menu_id'] : 0;
+        $item->parent_id = isset($input['parent_id']) ? $input['parent_id'] : 0;
 
         $item->save();
 
-        return redirect('/admin/menu');
+        return redirect('/admin/menuitems');
     }
 
     public function destroy($id) {
@@ -133,6 +177,6 @@ class MenuItemController extends Controller
 
         $item->delete();
 
-        return redirect('/admin/menu');
+        return redirect('/admin/menuitems');
     }
 }
