@@ -50,9 +50,14 @@
 
                 <?php
                 $params = (array) json_decode($menu->params);
-                echo "<pre>";
-                print_r($params);
-                echo "</pre>";
+                $params['params_1'] = isset($params['params_1']) ? $params['params_1'] : 0;
+                $params['params_2'] = isset($params['params_2']) ? $params['params_2'] : 0;
+                $params['params_3'] = isset($params['params_3']) ? $params['params_3'] : 0;
+                $params['params_4'] = isset($params['params_4']) ? $params['params_4'] : 0;
+                $params['params_5'] = isset($params['params_5']) ? $params['params_5'] : 0;
+                $params['params_6'] = isset($params['params_6']) ? $params['params_6'] : 0;
+                $params['params_7'] = isset($params['params_7']) ? $params['params_7'] : '';
+
                 ?>
 
                 <div id="type-1" class="form-group menu-type">
