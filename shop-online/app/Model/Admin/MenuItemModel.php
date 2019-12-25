@@ -92,7 +92,7 @@ class MenuItemModel extends Model
     public static function getMenuItemsByHeader() {
         $menu_header = DB::table('menus')->where('location', 1)->first();
         if (isset($menu_header->id)) {
-            $source = DB::table('menu_items')->where('menu_id', $menu_header->id)->get()->toArray();
+            $source = DB::table('menu_items')->where('menu_id', $menu_header->id)->orderBy('sort', 'ASC')->get()->toArray();
             $result = array();
 
             self::outputLevelCategories($source, $result);
@@ -149,10 +149,18 @@ class MenuItemModel extends Model
             foreach ($input_categories as $key => $category) {
                 if ($category['parent_id'] == $parent_id) {
                     $category['level'] = $lvl;
+
+                    if ($category['type'] == 7) {
+                        $menu_link = $category['link'];
+                    } else {
+                        $menu_link = url($category['link']);
+                    }
+
                     if ($lvl == 1) {
-                        $html .= '<li class="dropdown1"><a href="about.html" class="hyper"><span>';
+                        $li_class = (isset($category['total']) && ($category['total'] > 0)) ? 'dropdown ' : '';
+                        $html .= '<li class="'.$li_class.'"><a href="'.$menu_link.'" class="hyper" target="_blank"><span>';
                     } elseif ($lvl == 2) {
-                        $html .= '<li><a href="jewellery.html"><i class="fa fa-angle-right" aria-hidden="true"></i>';
+                        $html .= '<li><a href="'.$menu_link.'" target="_blank"><i class="fa fa-angle-right" aria-hidden="true"></i>';
                     } else {
 
                     }
@@ -162,6 +170,11 @@ class MenuItemModel extends Model
                     unset($input_categories[$key]);
 
                     $new_parent_id = $category['id'];
+
+                    if ($lvl == 1 && (isset($category['total']) && ($category['total'] > 0))) {
+                        $html .= '<b class="caret"></b>';
+                    }
+
                     $new_level = $lvl + 1;
                     self::buildMenuHTML($input_categories, $html, $new_parent_id, $new_level);
 

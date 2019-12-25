@@ -6,6 +6,7 @@ use App\Model\Admin\MenuModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\View;
 
 class MenuController extends Controller
 {
@@ -20,6 +21,8 @@ class MenuController extends Controller
     public function __construct()
     {
         $this->middleware('auth:admin');
+        $locations = MenuModel::getMenuLocations();
+        View::share('locations', $locations);
     }
     public function index() {
         $items = DB::table('menus')->paginate(10);

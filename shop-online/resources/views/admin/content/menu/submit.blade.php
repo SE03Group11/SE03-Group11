@@ -34,6 +34,18 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Location</label>
+                    <div class="col-sm-8">
+                        <select name="location">
+                            <option value="0">Không hiện</option>
+                            @foreach($locations as $key_local => $location)
+                                <option value="{{ $key_local }}">{{ $location }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Mô tả</label>
                     <div class="col-sm-8"><textarea name="desc" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ old('desc') }}</textarea></div>
                 </div>

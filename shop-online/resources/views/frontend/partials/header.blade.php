@@ -13,6 +13,8 @@
     </div>
 </div>
 <div class="header-bottom-w3ls">
+
+
     <div class="container">
         <div class="col-md-7 navigation-agileits">
             <nav class="navbar navbar-default">
@@ -25,74 +27,8 @@
                     </button>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                    <ul class="nav navbar-nav ">
-                        <li class=" active"><a href="index.html" class="hyper "><span>Home</span></a></li>
-                        <li class="dropdown ">
-                            <a href="#" class="dropdown-toggle  hyper" data-toggle="dropdown" ><span>Clothing<b class="caret"></b></span></a>
-                            <ul class="dropdown-menu multi">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <ul class="multi-column-dropdown">
 
-                                            <li><a href="women.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Women's Clothing</a></li>
-                                            <li><a href="men.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's Clothing</a></li>
-                                            <li><a href="kids.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Kid's Wear</a></li>
-                                            <li><a href="party.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Party Wear</a></li>
-
-                                        </ul>
-
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <ul class="multi-column-dropdown">
-                                            <li><a href="casuals.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Casuals</a></li>
-                                            <li><a href="night.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Night Wear</a></li>
-                                            <li><a href="formals.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Formals</a></li>
-                                            <li><a href="inner.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Inner Wear</a></li>
-
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-4 w3l">
-                                        <a href="women.html"><img src="{{ asset('frontend_assets/images/menu1.jpg') }}" class="img-responsive" alt=""></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle hyper" data-toggle="dropdown" ><span> Personal Care <b class="caret"></b></span></a>
-                            <ul class="dropdown-menu multi multi1">
-                                <div class="row">
-                                    <div class="col-sm-4">
-                                        <ul class="multi-column-dropdown">
-                                            <li><a href="jewellery.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Jewellery </a></li>
-                                            <li><a href="watches.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Watches</a></li>
-                                            <li><a href="cosmetics.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Cosmetics</a></li>
-                                            <li><a href="deos.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Deo & Perfumes</a></li>
-
-                                        </ul>
-
-                                    </div>
-                                    <div class="col-sm-4">
-
-                                        <ul class="multi-column-dropdown">
-                                            <li><a href="haircare.html"> <i class="fa fa-angle-right" aria-hidden="true"></i>Hair Care </a></li>
-                                            <li><a href="shoes.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Shoes</a></li>
-                                            <li><a href="handbags.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Handbags</a></li>
-                                            <li><a href="skincare.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Skin care</a></li>
-
-                                        </ul>
-
-                                    </div>
-                                    <div class="col-sm-4 w3l">
-                                        <a href="jewellery.html"><img src="{{ asset('frontend_assets/images/menu2.jpg') }}" class="img-responsive" alt=""></a>
-                                    </div>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </ul>
-                        </li>
-                        <li><a href="about.html" class="hyper"><span>About</span></a></li>
-                        <li><a href="contact.html" class="hyper"><span>Contact Us</span></a></li>
-                    </ul>
+                    <?php echo $fe_menus_items_header_html ?>
                 </div>
             </nav>
         </div>
@@ -111,7 +47,8 @@
             });
         </script>
         <div class="col-md-4 search-agileinfo">
-            <form action="#" method="post">
+            <form action="{{ url('/search') }}" method="get">
+                @csrf
                 <input type="search" name="Search" placeholder="Search for a Product..." required="">
                 <button type="sub" class="btn btn-default search" aria-label="Left Align">
                     <i class="fa fa-search" aria-hidden="true"> </i>
@@ -120,13 +57,83 @@
         </div>
         <div class="col-md-1 cart-wthree">
             <div class="cart">
-                <form action="#" method="post" class="last">
-                    <input type="hidden" name="cmd" value="_cart" />
-                    <input type="hidden" name="display" value="1" />
-                    <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                <form action="{{ url('/shop/cart') }}" method="get" class="last">
+                    <button class="w3view-cart" type="submit" name="submit" value="">
+                        <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        <span id="num-cart">{{ \Cart::getTotalQuantity() }}</span>
+                    </button>
                 </form>
             </div>
         </div>
         <div class="clearfix"></div>
     </div>
 </div>
+
+<style type="text/css">
+    .w3view-cart {
+        position: relative;
+    }
+    #num-cart {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 2px 5px;
+        font-size: 10px;
+        font-weight: bold;
+        background: orange;
+        color: white;
+        border-radius: 50%;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var add_cart_url = '<?php echo url('shop/cart/add') ?>';
+        $('.pw3ls-cart,.w3ls-cart').on('click', function (e) {
+            e.preventDefault();
+
+            var dataPost = $(this).closest('form').serializeArray();
+
+            // post đến controller
+            $.ajax({
+                url: add_cart_url,
+                dataType:'json',
+                type:'POST',
+                data: dataPost,
+                success: function(result){
+                    // bung popup
+                    $('#myModal').modal('show');
+                }
+            });
+
+
+
+        });
+    });
+</script>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Bạn đã thêm sản phẩm vào giỏ hàng thành công</h4>
+            </div>
+            <div class="modal-body">
+                <p style="text-align: center">
+                    <a href="{{ url('/shop/cart') }}" class="btn btn-success">Thanh toán</a>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Tiếp tục mua sắm</button>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">đóng</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
