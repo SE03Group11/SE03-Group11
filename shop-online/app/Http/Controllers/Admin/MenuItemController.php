@@ -121,6 +121,8 @@ class MenuItemController extends Controller
 
 
 
+
+
         $item->name = $input['name'];
         $item->sort = isset($input['sort']) ? (int) $input['sort'] : 0;
         $item->type = isset($input['type']) ? $input['type'] : 0;

@@ -12,6 +12,8 @@ class MenuItemModel extends Model
 
 
 
+
+
     public static function outputLevelCategories($input_categories, &$output_categories, $parent_id = 0, $lvl = 1) {
 
         if (count($input_categories) > 0) {
