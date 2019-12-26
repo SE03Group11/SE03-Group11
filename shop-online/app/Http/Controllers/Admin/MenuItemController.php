@@ -119,16 +119,78 @@ class MenuItemController extends Controller
 
         $params_json = json_encode($params);
 
+
+
         $item->name = $input['name'];
-        $item->type = isset($input['type']) ? $input['type'] : '';
+        $item->sort = isset($input['sort']) ? (int) $input['sort'] : 0;
+        $item->type = isset($input['type']) ? $input['type'] : 0;
+
+        $final_link = '';
+
+        /**
+         * $types[1] = 'Shop category';
+        $types[2] = 'Shop product';
+        $types[3] = 'Content category';
+        $types[4] = 'Content post';
+        $types[5] = 'Content page';
+        $types[6] = 'Content tag';
+        $types[7] = 'Custom Link';
+         */
+
+        switch ($item->type) {
+            case 1:
+                $final_link = '/shop/category/' . (int) $params['params_1'];
+                break;
+            case 2:
+                $final_link = '/shop/product/' . (int) $params['params_2'];
+                break;
+            case 3:
+                $final_link = '/content/category/' . (int) $params['params_3'];
+                break;
+            case 4:
+                $final_link = '/content/post/' . (int) $params['params_4'];
+                break;
+            case 5:
+                $final_link = '/page/'. (int) $params['params_5'];
+                break;
+            case 6:
+
+                $final_link = '/content/tag/'.(int) $params['params_6'];
+                break;
+            case 7:
+                $final_link = $params['params_7'];
+                break;
+            default:
+                $final_link = '';
+                break;
+        }
+
+
         $item->params = $params_json;
-        $item->link = isset($input['link']) ? $input['link'] : '';
+        $item->link = $final_link;
         $item->desc = $input['desc'];
         $item->icon = isset($input['icon']) ? $input['icon'] : '';
         $item->menu_id = isset($input['menu_id']) ? $input['menu_id'] : 0;
         $item->parent_id = isset($input['parent_id']) ? $input['parent_id'] : 0;
 
         $item->save();
+
+
+
+        if ($item->parent_id > 0) {
+            /**
+             * Đếm tổng số menu_item có cha là $item->parent_id
+             */
+            $total = DB::table('menu_items')->where('parent_id', $item->parent_id)->count();
+
+            /**
+             * Cập nhật tổng số bản ghi con cho menu item cha
+             */
+            $parent = MenuItemModel::find($item->parent_id);
+            $parent->total = (int) $total;
+            $parent->save();
+        }
+
 
         return redirect('/admin/menuitems');
     }
@@ -148,6 +210,16 @@ class MenuItemController extends Controller
 
         $item = MenuItemModel::find($id);
 
+        /**
+         * Kiểm tra xem có đổi parent_id không
+         */
+        if ( $item->parent_id != $input['parent_id']) {
+            $change_parent = true;
+        } else {
+            $change_parent = false;
+        }
+        $old_parent_id = $item->parent_id;
+
         $params = array();
 
         $types = MenuItemModel::getTypeOfMenuItem();
@@ -158,16 +230,79 @@ class MenuItemController extends Controller
         $params_json = json_encode($params);
 
         $item->name = $input['name'];
+        $item->sort = isset($input['sort']) ? (int) $input['sort'] : 0;
+        $item->type = isset($input['type']) ? $input['type'] : 0;
 
-        $item->type = isset($input['type']) ? $input['type'] : '';
+        switch ($item->type) {
+            case 1:
+                $final_link = '/shop/category/' . (int) $params['params_1'];
+                break;
+            case 2:
+                $final_link = '/shop/product/' . (int) $params['params_2'];
+                break;
+            case 3:
+                $final_link = '/content/category/' . (int) $params['params_3'];
+                break;
+            case 4:
+                $final_link = '/content/post/' . (int) $params['params_4'];
+                break;
+            case 5:
+                $final_link = '/page/'. (int) $params['params_5'];
+                break;
+            case 6:
+
+                $final_link = '/content/tag/'.(int) $params['params_6'];
+                break;
+            case 7:
+                $final_link = $params['params_7'];
+                break;
+            default:
+                $final_link = '';
+                break;
+        }
+
         $item->params = $params_json;
-        $item->link = isset($input['link']) ? $input['link'] : '';
+        $item->link = $final_link;
         $item->desc = $input['desc'];
         $item->icon = isset($input['icon']) ? $input['icon'] : '';
         $item->menu_id = isset($input['menu_id']) ? $input['menu_id'] : 0;
         $item->parent_id = isset($input['parent_id']) ? $input['parent_id'] : 0;
 
         $item->save();
+
+        if ($change_parent == true) {
+
+            if ($old_parent_id > 0) {
+                /**
+                 * trước khi save
+                 * Đếm tổng số menu_item có cha là $item->parent_id
+                 */
+                $total_old = DB::table('menu_items')->where('parent_id', $old_parent_id)->count();
+
+                /**
+                 * Cập nhật tổng số bản ghi con cho menu item cha
+                 */
+                $old_parent = MenuItemModel::find($old_parent_id);
+                $old_parent->total = (int) $total_old;
+                $old_parent->save();
+            }
+
+        }
+
+        if ($item->parent_id > 0) {
+            /**
+             * Đếm tổng số menu_item có cha là $item->parent_id
+             */
+            $total = DB::table('menu_items')->where('parent_id', $item->parent_id)->count();
+
+            /**
+             * Cập nhật tổng số bản ghi con cho menu item cha
+             */
+            $parent = MenuItemModel::find($item->parent_id);
+            $parent->total = (int) $total;
+            $parent->save();
+        }
+
 
         return redirect('/admin/menuitems');
     }

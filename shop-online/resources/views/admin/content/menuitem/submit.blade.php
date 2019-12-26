@@ -28,6 +28,13 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Sắp xếp</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="sort" value="{{ old('sort') }}" class="form-control1" id="focusedinput" placeholder="Nhập thứ tự sắp xếp">
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Kiểu menu item</label>
                     <div class="col-sm-8">
                         <select id="menu-type" name="type">
