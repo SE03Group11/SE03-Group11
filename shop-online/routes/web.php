@@ -11,15 +11,64 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.homepages.index');
-});
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+/**
+ * Homepage route
+ */
+Route::get('/', 'Frontend\HomepageController@index');
+Route::get('/search', 'Frontend\SearchController@index');
+Route::post('/newsletter', 'Frontend\NewsletterController@store');
+Route::get('/newsletter', 'Frontend\NewsletterController@index');
 
+/**
+ * Frontend route shop category
+ */
+Route::get('shop/category/{id}', 'Frontend\ShopCategoryController@detail');
+
+/**
+ * Frontend route shop product
+ */
+Route::get('shop/product/{id}', 'Frontend\ShopProductController@detail');
+
+/**
+ * Frontend route cart giỏ hàng
+ */
+Route::get('shop/cart', 'Frontend\ShopCartController@index');
+Route::post('shop/cart/add', 'Frontend\ShopCartController@add');
+Route::post('shop/cart/update', 'Frontend\ShopCartController@update');
+Route::post('shop/cart/remove', 'Frontend\ShopCartController@remove');
+Route::post('shop/cart/clear', 'Frontend\ShopCartController@clear');
+
+/**
+ * Frontend route payment thanh toán
+ */
+Route::get('shop/payment', 'Frontend\ShopPaymentController@index');
+Route::post('shop/payment', 'Frontend\ShopPaymentController@order');
+Route::get('shop/payment/after', 'Frontend\ShopPaymentController@afterOrder');
+
+/**
+ * Frontend route CMS page
+ */
+Route::get('page/{id}', 'Frontend\ContentPageController@detail');
+
+/**
+ * Frontend route content category
+ */
+Route::get('content/category/{id}', 'Frontend\ContentCategoryController@detail');
+
+/**
+ * Frontend route content tag
+ */
+Route::get('content/tag/{id}', 'Frontend\ContentTagController@detail');
+
+/**
+ * Frontend route shop product
+ */
+Route::get('content/post/{id}', 'Frontend\ContentPostController@detail');
 /**
  * Route cho administrator
  */
