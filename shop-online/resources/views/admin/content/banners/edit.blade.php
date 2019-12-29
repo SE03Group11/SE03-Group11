@@ -83,8 +83,6 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('.lfm-btn').filemanager('image', {'prefix':'http://localhost:81/SE03-Group11/shop-online/public/laravel-filemanager'});
-
         });
-
     </script>
 @endsection

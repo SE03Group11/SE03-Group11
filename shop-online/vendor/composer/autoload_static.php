@@ -488,7 +488,7 @@ class ComposerStaticInitd8043da01f643bf534fa0590a1ff9add
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
         'App\\Http\\Controllers\\Admin\\AdminManagerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/AdminManagerController.php',
-        'App\\Http\\Controllers\\Admin\\BannerController' => __DIR__ . '/../..' . '/app/Http/Controllers/BannerController.php',
+        'App\\Http\\Controllers\\Admin\\BannerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/BannerController.php',
         'App\\Http\\Controllers\\Admin\\ConfigController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ConfigController.php',
         'App\\Http\\Controllers\\Admin\\ContentCategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ContentCategoryController.php',
         'App\\Http\\Controllers\\Admin\\ContentPageController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/ContentPageController.php',
