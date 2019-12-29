@@ -342,6 +342,14 @@ Route::prefix('admin')->group(function() {
         return view('admin.content.newletters.index');
     });
 
+    Route::get('newletters', 'Admin\NewslettersController@index');
+    Route::get('newletters/create', 'Admin\NewslettersController@create');
+    Route::get('newletters/{id}/edit', 'Admin\NewslettersController@edit');
+    Route::get('newletters/{id}/delete', 'Admin\NewslettersController@delete');
+
+    Route::post('newletters', 'Admin\NewslettersController@store');
+    Route::post('newletters/{id}', 'Admin\NewslettersController@update');
+    Route::post('newletters/{id}/delete', 'Admin\NewslettersController@destroy');
     /**
      * ----------------- Route admin banners --------------------
      * ---------------------------------------------------------
