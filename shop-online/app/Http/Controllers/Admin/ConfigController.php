@@ -22,7 +22,7 @@ class ConfigController extends Controller
     }
     //
     public function index(){
-        $items = ConfigModel::all(); //lấy tất cả các bản ghi trong Global settings
+        $items = ConfigModel::all();
 
         $config = array();
         $config[] = 'web_name';

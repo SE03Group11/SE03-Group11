@@ -4,7 +4,6 @@
 @endsection
 @section('content')
     <h1> Cấu hình trang web</h1>
-
     <div class="row">
         <div class="form-three widget-shadow">
 
@@ -84,5 +83,4 @@
         });
 
     </script>
-
 @endsection
