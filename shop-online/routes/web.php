@@ -304,9 +304,6 @@ Route::prefix('admin')->group(function() {
      * ---------------------------------------------------------
      */
 
-    Route::get('users', function () {
-        return view('admin.content.users.index');
-    });
     Route::get('users', 'Admin\AdminManagerController@index');
     Route::get('users/create', 'Admin\AdminManagerController@create');
     Route::get('users/{id}/edit', 'Admin\AdminManagerController@edit');
@@ -353,6 +350,16 @@ Route::prefix('admin')->group(function() {
     Route::get('banners', function () {
         return view('admin.content.banners.index');
     });
+
+    Route::get('banners', 'Admin\BannerController@index');
+    Route::get('banners/create', 'Admin\BannerController@create');
+    Route::get('banners/{id}/edit', 'Admin\BannerController@edit');
+    Route::get('banners/{id}/delete', 'Admin\BannerController@delete');
+
+    Route::post('banners', 'Admin\BannerController@store');
+    Route::post('banners/{id}', 'Admin\BannerController@update');
+    Route::post('banners/{id}/delete', 'Admin\BannerController@destroy');
+
 
     /**
      * ----------------- Route admin contacts --------------------
