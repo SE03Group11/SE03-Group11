@@ -20,10 +20,17 @@
                         <input type="text" name="slug" class="form-control1" id="focusedinput" value="{{ $cat->slug }}" placeholder="Default Input">
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Images</label>
                     <div class="col-sm-8">
-                        <input type="text" name="images" class="form-control1" id="focusedinput" value="{{ $cat->images }}"  placeholder="Default Input">
+                        <span class="input-group-btn">
+                         <a id="lfm1" data-input="thumbnail1" data-preview="holder1" class="lfm-btn btn btn-primary">
+                           <i class="fa fa-picture-o"></i> Choose
+                         </a>
+                       </span>
+                        <input id="thumbnail1" type="text" name="images" value="{{ $cat->images }}" class="form-control1" id="focusedinput" placeholder="Default Input">
+                        <img id="holder1" src="{{ asset($cat->images) }}"style="margin-top:15px;max-height:100px;">
                     </div>
                 </div>
 
@@ -46,4 +53,11 @@
         </div>
     </div>
 
+    <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.lfm-btn').filemanager('image', {'prefix':'http://localhost:81/SE03-Group11/shop-online/public/laravel-filemanager'});
+        });
+
+    </script>
 @endsection
