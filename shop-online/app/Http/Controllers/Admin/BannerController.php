@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Model\Admin\ShopBrandModel;
+use App\Model\Admin\BannerModel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-class ShopBrandController extends Controller
+
+class BannerController extends Controller
 {
     //
     /**
@@ -19,17 +20,17 @@ class ShopBrandController extends Controller
         $this->middleware('auth:admin');
     }
 
-
     public function index() {
-        $items = DB::table('shop_brands')->paginate(10);
+
+        $items = DB::table('banners')->paginate(10);
 
         /**
          * Đây là biến truyền từ controller xuống view
          */
         $data = array();
-        $data['brands'] = $items;
+        $data['banners'] = $items;
 
-        return view('admin.content.shop.brand.index', $data);
+        return view('admin.content.banners.index', $data);
     }
 
     public function create() {
@@ -38,8 +39,9 @@ class ShopBrandController extends Controller
          */
         $data = array();
 
+        $data['locations'] = BannerModel::getBannerLocations();
 
-        return view('admin.content.shop.brand.submit', $data);
+        return view('admin.content.banners.submit', $data);
     }
 
     public function edit($id) {
@@ -48,11 +50,12 @@ class ShopBrandController extends Controller
          */
         $data = array();
 
-        $item = ShopBrandModel::find($id);
-        $data['brand'] = $item;
+        $item = BannerModel::find($id);
+        $data['banner'] = $item;
 
+        $data['locations'] = BannerModel::getBannerLocations();
 
-        return view('admin.content.shop.brand.edit', $data);
+        return view('admin.content.banners.edit', $data);
     }
 
     public function delete($id) {
@@ -61,10 +64,10 @@ class ShopBrandController extends Controller
          */
         $data = array();
 
-        $item = ShopBrandModel::find($id);
-        $data['brand'] = $item;
+        $item = BannerModel::find($id);
+        $data['banner'] = $item;
 
-        return view('admin.content.shop.brand.delete', $data);
+        return view('admin.content.banners.delete', $data);
     }
 
 
@@ -78,17 +81,18 @@ class ShopBrandController extends Controller
 
         $input = $request->all();
 
-        $item = new ShopBrandModel();
+        $item = new BannerModel();
 
         $item->name = $input['name'];
         $item->image = $input['image'];
         $item->link = $input['link'];
+        $item->location_id = isset($input['location_id']) ? (int) $input['location_id'] : 0;
         $item->intro = isset($input['intro']) ? $input['intro'] : '';
         $item->desc = isset($input['desc']) ? $input['desc'] : '';
 
         $item->save();
 
-        return redirect('/admin/shop/brand');
+        return redirect('/admin/banners');
     }
 
     public function update(Request $request, $id) {
@@ -101,25 +105,25 @@ class ShopBrandController extends Controller
 
         $input = $request->all();
 
-        $item = ShopBrandModel::find($id);
+        $item = BannerModel::find($id);
 
         $item->name = $input['name'];
         $item->image = $input['image'];
         $item->link = $input['link'];
+        $item->location_id = isset($input['location_id']) ? (int) $input['location_id'] : 0;
         $item->intro = isset($input['intro']) ? $input['intro'] : '';
         $item->desc = isset($input['desc']) ? $input['desc'] : '';
 
         $item->save();
 
-        return redirect('/admin/shop/brand');
+        return redirect('/admin/banners');
     }
 
     public function destroy($id) {
-        $item = ShopBrandModel::find($id);
+        $item = BannerModel::find($id);
 
         $item->delete();
 
-        return redirect('/admin/shop/brand');
+        return redirect('/admin/banners');
     }
-
 }

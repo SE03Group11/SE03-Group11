@@ -3,7 +3,7 @@
     Danh mục nội dung
 @endsection
 @section('content')
-    <h1> Thêm mới nhãn hàng </h1>
+    <h1> Thêm mới banner </h1>
 
     <div class="row">
         <div class="form-three widget-shadow">
@@ -18,7 +18,7 @@
                 </div>
             @endif
 
-            <form name="page" action="{{ url('admin/shop/brand') }}" method="post" class="form-horizontal">
+            <form name="page" action="{{ url('admin/banners') }}" method="post" class="form-horizontal">
                 @csrf
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Tên</label>
@@ -32,7 +32,17 @@
                         <input type="text" name="link" value="{{ old('link') }}" class="form-control1" id="focusedinput" placeholder="Default Input">
                     </div>
                 </div>
-
+                <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Vị trí</label>
+                    <div class="col-sm-8">
+                        <select name="location_id">
+                            <option value="0">Không hiện</option>
+                            @foreach($locations as $key_location => $location)
+                                <option value="{{ $key_location }}">{{ $location }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Image</label>
                     <div class="col-sm-8">
@@ -67,8 +77,6 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('.lfm-btn').filemanager('image', {'prefix':'http://localhost:81/SE03-Group11/shop-online/public/laravel-filemanager'});
-
         });
-
     </script>
 @endsection
