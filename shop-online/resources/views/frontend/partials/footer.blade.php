@@ -59,6 +59,7 @@
         <p class="copy-right">© 2016 Fashion Club . All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a></p>
     </div>
 </div>
+{{--
 <!-- cart-js -->
 <script src="{{ asset('frontend_assets/js/minicart.js') }}"></script>
 <script>
@@ -77,4 +78,4 @@
         }
     });
 </script>
-<!-- //cart-js -->
+<!-- //cart-js -->--}}

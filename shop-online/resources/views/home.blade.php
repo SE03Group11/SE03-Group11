@@ -11,7 +11,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h1>Bạn đã đăng nhập admin thành công !</h1>
+                    <h1>Bạn đã đăng nhập thành công !</h1>
                 </div>
             </div>
         </div>
