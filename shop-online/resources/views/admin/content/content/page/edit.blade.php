@@ -23,33 +23,44 @@
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Tên bài viết</label>
                     <div class="col-sm-8">
-                        <input type="text" name="name" class="form-control1" id="focusedinput" value="{{ $page->name }}" placeholder="Default Input">
+                        <input type="text" name="name" class="form-control1" id="focusedinput" value="{{ $page->name }}"
+                               placeholder="Default Input">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Slug</label>
                     <div class="col-sm-8">
-                        <input type="text" name="slug" class="form-control1" id="focusedinput" value="{{ $page->slug }}" placeholder="Default Input">
+                        <input type="text" name="slug" class="form-control1" id="focusedinput" value="{{ $page->slug }}"
+                               placeholder="Default Input">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Images</label>
                     <div class="col-sm-8">
-                        <input type="text" name="images" class="form-control1" id="focusedinput" value="{{ $page->images }}" placeholder="Default Input">
+                        <span class="input-group-btn">
+                         <a id="lfm1" data-input="thumbnail1" data-preview="holder1" class="lfm-btn btn btn-primary">
+                           <i class="fa fa-picture-o"></i> Choose
+                         </a>
+                       </span>
+                        <input id="thumbnail1" type="text" name="images" value="{{ $page->images }}"
+                               class="form-control1" id="focusedinput" placeholder="Default Input">
+                        <img id="holder1" src="{{ asset($page->images) }}" style="margin-top:15px;max-height:100px;">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Mô tả ngắn</label>
                     <div class="col-sm-8">
-                        <textarea name="intro" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ $page->intro }}</textarea></div>
+                        <textarea name="intro" id="txtarea1" cols="50" rows="4"
+                                  class="form-control1 mytinymce">{{ $page->intro }}</textarea></div>
                 </div>
 
                 <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Mô tả</label>
                     <div class="col-sm-8">
-                        <textarea name="desc" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ $page->desc }}</textarea></div>
+                        <textarea name="desc" id="txtarea1" cols="50" rows="4"
+                                  class="form-control1 mytinymce">{{ $page->desc }}</textarea></div>
                 </div>
 
                 <div class="col-sm-offset-2">
@@ -58,4 +69,11 @@
             </form>
         </div>
     </div>
+    <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.lfm-btn').filemanager('image', {'prefix': 'http://localhost/SE03-Group11/shop-online/public/laravel-filemanager'});
+        });
+
+    </script>
 @endsection
