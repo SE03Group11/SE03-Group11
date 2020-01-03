@@ -38,6 +38,15 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Homepage</label>
+                    <div class="col-sm-8">
+                        <select name="homepage">
+                            <option value="0">Không</option>
+                            <option value="1">Có</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="focusedinput" class="col-sm-2 control-label">Slug</label>
                     <div class="col-sm-8">
                         <input type="text" name="slug" value="{{ old('slug') }}" class="form-control1" id="focusedinput" placeholder="Default Input">
@@ -86,6 +95,12 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="focusedinput" class="col-sm-2 control-label">Thông tin vận chuyển</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="ship_info" value="{{ old('ship_info') }}" class="form-control1" id="focusedinput" placeholder="Default Input">
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="txtarea1" class="col-sm-2 control-label">Mô tả ngắn</label>
                     <div class="col-sm-8">
                         <textarea name="intro" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ old('intro') }}</textarea></div>
@@ -95,6 +110,24 @@
                     <label for="txtarea1" class="col-sm-2 control-label">Mô tả</label>
                     <div class="col-sm-8">
                         <textarea name="desc" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ old('desc') }}</textarea></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtarea1" class="col-sm-2 control-label">Thông tin bổ sung</label>
+                    <div class="col-sm-8">
+                        <textarea name="additional_information" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ old('additional_information') }}</textarea></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtarea1" class="col-sm-2 control-label">Đánh giá</label>
+                    <div class="col-sm-8">
+                        <textarea name="review" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ old('review') }}</textarea></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="txtarea1" class="col-sm-2 control-label">Trợ giúp</label>
+                    <div class="col-sm-8">
+                        <textarea name="help" id="txtarea1" cols="50" rows="4" class="form-control1 mytinymce">{{ old('help') }}</textarea></div>
                 </div>
 
                 <div class="col-sm-offset-2">
@@ -107,7 +140,7 @@
     <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.lfm-btn').filemanager('image', {'prefix':'http://localhost:81/SE03-Group11/shop-online/public/laravel-filemanager'});
+            $('.lfm-btn').filemanager('image', {'prefix':'http://localhost/lar.tuto/authen/public/laravel-filemanager'});
 
 
             $('#plus-image').on('click', function (e) {
@@ -151,7 +184,7 @@
 
                 $( html ).insertBefore( box );
 
-                $('.lfm-btn').filemanager('image', {'prefix':'http://localhost:81/SE03-Group11/shop-online/public/laravel-filemanager'});
+                $('.lfm-btn').filemanager('image', {'prefix':'http://localhost/lar.tuto/authen/public/laravel-filemanager'});
 
             });
 
