@@ -10,8 +10,13 @@ class ShopCategoryController extends Controller
 {
     //
 
-    public function detail() {
+    public function detail($id) {
 
-        return view('frontend.shop.category.detail');
+        $data = array();
+
+        $data['category'] = ShopCategoryModel::find($id);
+        $data['products'] = ShopCategoryModel::getProducts($id);
+
+        return view('frontend.shop.category.detail', $data);
     }
 }
