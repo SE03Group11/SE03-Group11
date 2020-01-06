@@ -140,7 +140,7 @@
     <script src="{{ asset('/vendor/laravel-filemanager/js/lfm.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.lfm-btn').filemanager('image', {'prefix':'http://localhost/SE03-Group11/shop-online/public/laravel-filemanager'});
+            $('.lfm-btn').filemanager('image', {'prefix':'http://localhost:81/SE03-Group11/shop-online/public/laravel-filemanager'});
 
 
             $('#plus-image').on('click', function (e) {
@@ -184,7 +184,7 @@
 
                 $( html ).insertBefore( box );
 
-                $('.lfm-btn').filemanager('image', {'prefix':'http://localhost/SE03-Group11/shop-online/public/laravel-filemanager'});
+                $('.lfm-btn').filemanager('image', {'prefix':'http://localhost:81/SE03-Group11/shop-online/public/laravel-filemanager'});
 
             });
 

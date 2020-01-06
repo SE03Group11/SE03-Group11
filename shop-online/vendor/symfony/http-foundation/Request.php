@@ -313,9 +313,9 @@ class Request
     public static function create($uri, $method = 'GET', $parameters = [], $cookies = [], $files = [], $server = [], $content = null)
     {
         $server = array_replace([
-            'SERVER_NAME' => 'localhost',
+            'SERVER_NAME' => 'localhost:81',
             'SERVER_PORT' => 80,
-            'HTTP_HOST' => 'localhost',
+            'HTTP_HOST' => 'localhost:81',
             'HTTP_USER_AGENT' => 'Symfony',
             'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'HTTP_ACCEPT_LANGUAGE' => 'en-us,en;q=0.5',
@@ -834,12 +834,12 @@ class Request
      *
      * The path info always starts with a /.
      *
-     * Suppose this request is instantiated from /mysite on localhost:
+     * Suppose this request is instantiated from /mysite on localhost:81:
      *
-     *  * http://localhost/mysite              returns an empty string
-     *  * http://localhost/mysite/about        returns '/about'
-     *  * http://localhost/mysite/enco%20ded   returns '/enco%20ded'
-     *  * http://localhost/mysite/about?var=1  returns '/about'
+     *  * http://localhost:81/mysite              returns an empty string
+     *  * http://localhost:81/mysite/about        returns '/about'
+     *  * http://localhost:81/mysite/enco%20ded   returns '/enco%20ded'
+     *  * http://localhost:81/mysite/about?var=1  returns '/about'
      *
      * @return string The raw path (i.e. not urldecoded)
      */
@@ -857,10 +857,10 @@ class Request
      *
      * Suppose that an index.php file instantiates this request object:
      *
-     *  * http://localhost/index.php         returns an empty string
-     *  * http://localhost/index.php/page    returns an empty string
-     *  * http://localhost/web/index.php     returns '/web'
-     *  * http://localhost/we%20b/index.php  returns '/we%20b'
+     *  * http://localhost:81/index.php         returns an empty string
+     *  * http://localhost:81/index.php/page    returns an empty string
+     *  * http://localhost:81/web/index.php     returns '/web'
+     *  * http://localhost:81/we%20b/index.php  returns '/we%20b'
      *
      * @return string The raw path (i.e. not urldecoded)
      */

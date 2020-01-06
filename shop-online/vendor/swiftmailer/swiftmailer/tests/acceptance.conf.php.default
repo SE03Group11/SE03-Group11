@@ -16,7 +16,7 @@
  Defines: The name and port of a SMTP server you can connect to.
  Recommended: smtp.gmail.com:25
  */
-define('SWIFT_SMTP_HOST', 'localhost:4456');
+define('SWIFT_SMTP_HOST', 'localhost:81:4456');
 
 /*
  Defines: An SMTP server and port which uses TLS encryption.

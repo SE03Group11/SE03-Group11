@@ -48,6 +48,8 @@ Route::post('shop/cart/clear', 'Frontend\ShopCartController@clear');
  * Frontend route payment thanh toán
  */
 Route::get('shop/payment', 'Frontend\ShopPaymentController@index');
+Route::post('shop/payment', 'Frontend\ShopPaymentController@order');
+Route::get('shop/payment/after', 'Frontend\ShopPaymentController@afterOrder');
 
 /**
  * Frontend route CMS page

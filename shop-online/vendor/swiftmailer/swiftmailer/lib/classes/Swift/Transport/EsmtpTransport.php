@@ -36,7 +36,7 @@ class Swift_Transport_EsmtpTransport extends Swift_Transport_AbstractSmtpTranspo
      */
     private $params = [
         'protocol' => 'tcp',
-        'host' => 'localhost',
+        'host' => 'localhost:81',
         'port' => 25,
         'timeout' => 30,
         'blocking' => 1,

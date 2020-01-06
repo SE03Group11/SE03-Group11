@@ -289,7 +289,7 @@ returned, which equates to a boolean ``false``. If you set two
 recipients are delivered to successfully then the value 5 will be returned::
 
     // Create the Transport
-    $transport = new Swift_SmtpTransport('localhost', 25);
+    $transport = new Swift_SmtpTransport('localhost:81', 25);
 
     // Create the Mailer using your created Transport
     $mailer = new Swift_Mailer($transport);
@@ -364,7 +364,7 @@ exception and stop the execution or your script early.
     not be aware of each other::
 
         // Create the Transport
-        $transport = new Swift_SmtpTransport('localhost', 25);
+        $transport = new Swift_SmtpTransport('localhost:81', 25);
 
         // Create the Mailer using your created Transport
         $mailer = new Swift_Mailer($transport);
