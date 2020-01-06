@@ -158,9 +158,12 @@ Route::prefix('admin')->group(function() {
     Route::post('shop/product/{id}', 'Admin\ShopProductController@update');
     Route::post('shop/product/{id}/delete', 'Admin\ShopProductController@destroy');
 
-    Route::get('shop/order', function () {
-        return view('admin.content.shop.order.index');
-    });
+    Route::get('shop/order', 'Admin\ShopOrderController@index');
+    Route::get('shop/order/{id}/edit', 'Admin\ShopOrderController@edit');
+    Route::get('shop/order/{id}/delete', 'Admin\ShopOrderController@delete');
+
+    Route::post('shop/order/{id}', 'Admin\ShopOrderController@update');
+    Route::post('shop/order/{id}/delete', 'Admin\ShopOrderController@destroy');
 
     Route::get('shop/review', function () {
         return view('admin.content.shop.review.index');
