@@ -18,7 +18,7 @@
 ## 3. Hướng dẫn cài đặt và sử dụng
 
 - Hướng dẫn cài đặt
-  - Download sorce code về máy và giải nén
+  - Download source code về máy và giải nén
   - Truy cập thư mục vừa giải nén và chạy lệnh `composer install` để cài đặt các thư viện cần thiết. Nếu chưa cài đặt composer thì có thể cài đặt [tại đây](https://getcomposer.org/doc/00-intro.md)
   - Mở trình duyệt web và truy cập đường dẫn `http://localhost/SE03-Group11/shop-online/public/` để truy cập vào trang web, `http://localhost/SE03-Group11/shop-online/public/admin/` để truy cập vào trang admin.
 
