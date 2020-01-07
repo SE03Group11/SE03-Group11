@@ -24,12 +24,15 @@
 
 - Hướng dẫn sử dụng
   - Người dùng có thể xem, tìm kiếm sản phẩm có sẵn, mua hàng, xem thông tin về thời trang,...
+  
   <img src="https://i.imgur.com/2VWJIzT.png">
   <img src="https://i.imgur.com/Otww834.png">
   <img src="https://i.imgur.com/Se312JP.png">
   <img src="https://i.imgur.com/Ucqf6iW.png">
   <img src="https://i.imgur.com/zT2lp92.png">
-  <img src="https://i.imgur.com/Ucqf6iW.png">
   <img src="https://i.imgur.com/R9Y1DQR.png">
   <img src="https://i.imgur.com/0BuxzAY.png">
   <img src="https://i.imgur.com/O9G3gRl.png">
+  
+  - Admin có thể thêm dữ liệu danh mục, sản phẩm, quản lý bài viết, ....
+  
