@@ -15,7 +15,7 @@
 ###### 2.2 Công cụ
 - PHPStorm
 - Navicat
-## 3. Hướng dẫn sử dụng và cài đặt
+## 3. Hướng dẫn cài đặt và sử dụng
 
 - Hướng dẫn cài đặt
   - Download sorce code về máy và giải nén
@@ -23,4 +23,5 @@
   - Mở trình duyệt web và truy cập đường dẫn `http://localhost/SE03-Group11/shop-online/public/` để truy cập vào trang web, `http://localhost/SE03-Group11/shop-online/public/admin/` để truy cập vào trang admin.
 
 - Hướng dẫn sử dụng
-  
+  - Người dùng có thể xem, tìm kiếm sản phẩm có sẵn, mua hàng, xem thông tin về thời trang,...
+  <img src="https://i.imgur.com/2VWJIzT.png">
