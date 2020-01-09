@@ -34,5 +34,11 @@
   <img src="https://i.imgur.com/0BuxzAY.png">
   <img src="https://i.imgur.com/O9G3gRl.png">
   
-  - Admin có thể thêm dữ liệu danh mục, sản phẩm, quản lý bài viết, ....
-  
+  - Admin có thể quản trị danh mục, sản phẩm, khách hàng, menu, user,....
+  <img src="https://i.imgur.com/MEjCJLT.png">
+  <img src="https://i.imgur.com/OxhHkut.png">
+  <img src="https://i.imgur.com/kYkwPpf.png">
+  <img src="https://i.imgur.com/u20GX6q.png">
+  <img src="https://i.imgur.com/W6Ze1LN.png">
+  <img src="https://i.imgur.com/nL3hvvQ.png">
+  <img src="https://i.imgur.com/nL3hvvQ.png">
