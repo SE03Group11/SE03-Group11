@@ -118,7 +118,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
             });*/
 
             var editor_config = {
-                path_absolute : "http://localhost:81/SE03-Group11/shop-online/public/",
+                path_absolute : "http://localhost:8080/shop_online/shop-online/public/",
                 selector: "textarea.mytinymce",
                 height: 200,
                 plugins: [

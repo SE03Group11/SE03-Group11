@@ -114,7 +114,7 @@ class SystemNodeProvider implements NodeProviderInterface
             // remove invalid entries
             $macs = array_filter($macs, function ($mac) {
                 return
-                    // localhost:81 adapter
+                    // localhost adapter
                     $mac !== '00:00:00:00:00:00' &&
                     // must match  mac adress
                     preg_match('/^([0-9a-f]{2}:){5}[0-9a-f]{2}$/i', $mac);

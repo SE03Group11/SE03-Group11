@@ -33,7 +33,7 @@ class RequestContext
     private $queryString;
     private $parameters = [];
 
-    public function __construct(string $baseUrl = '', string $method = 'GET', string $host = 'localhost:81', string $scheme = 'http', int $httpPort = 80, int $httpsPort = 443, string $path = '/', string $queryString = '')
+    public function __construct(string $baseUrl = '', string $method = 'GET', string $host = 'localhost', string $scheme = 'http', int $httpPort = 80, int $httpsPort = 443, string $path = '/', string $queryString = '')
     {
         $this->setBaseUrl($baseUrl);
         $this->setMethod($method);

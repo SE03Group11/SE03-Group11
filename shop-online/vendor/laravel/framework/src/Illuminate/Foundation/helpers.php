@@ -593,7 +593,7 @@ if (! function_exists('mix')) {
                 return new HtmlString(Str::after($url, ':').$path);
             }
 
-            return new HtmlString("//localhost:81:8080{$path}");
+            return new HtmlString("//localhost:8080{$path}");
         }
 
         $manifestPath = public_path($manifestDirectory.'/mix-manifest.json');

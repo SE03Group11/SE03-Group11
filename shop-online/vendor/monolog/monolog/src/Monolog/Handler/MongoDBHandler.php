@@ -20,7 +20,7 @@ use Monolog\Formatter\NormalizerFormatter;
  * usage example:
  *
  *   $log = new Logger('application');
- *   $mongodb = new MongoDBHandler(new \Mongo("mongodb://localhost:81:27017"), "logs", "prod");
+ *   $mongodb = new MongoDBHandler(new \Mongo("mongodb://localhost:27017"), "logs", "prod");
  *   $log->pushHandler($mongodb);
  *
  * @author Thomas Tourlourat <thomas@tourlourat.com>
